@@ -2,8 +2,8 @@
 <html lang = "en">
     <head>
         <title>Лабораторная работа №1</title>
-        <link rel = "stylesheet" href = "styles/style.css">
-        <script type = "text/javascript" src = "/scripts/script1.js"></script>
+        <link rel = "stylesheet" href = "">
+        <script type = "text/javascript" src = "scripts/script1.js"></script>
     </head>
 
     <body>
