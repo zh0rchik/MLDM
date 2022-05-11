@@ -1,7 +1,7 @@
 <DOCTYPE html>
     <html lang = "en">
     <head>
-        <title>Лабораторная работа №1</title>
+        <title>Лабораторная работа №2</title>
         <link rel = "stylesheet" href = "">
         <script type = "text/javascript" src = "scripts/script2.js"></script>
     </head>
