@@ -26,10 +26,10 @@
     for ($i = 0; $i < count($column_row_matrix); $i++) {
         echo "<br>";
         for ($j = 0; $j < count($column_row_matrix); $j++) {
-            if (!$array[$i][$j])
-                echo "0";
-            else
+            if ($array[$i][$j])
                 echo "1";
+            else
+                echo "0";
             echo " ";
         }
     }
