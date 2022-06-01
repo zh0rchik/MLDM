@@ -15,16 +15,27 @@
         for($j = 0; $j < count($column_row_matrix); $j++){
             if(count($column_row_matrix) == 1 && $column_row_matrix[$j] == '')
                 die("Ошибка: лишние переносы!");
+            if($column_row_matrix[$j] != "*" && !is_numeric($column_row_matrix[$j])){
+                die('Ошибка: в матрице должно содержаться цифра или "*"!');
+            }
             if($column_row_matrix[$j] === '*'){
                 array_push($array_row, INF);
             } else{
-
                 array_push($array_row, $column_row_matrix[$j]);
             }
         }
 
         array_push($array, $array_row);
     }
+
+    if($start > count($array) || $end > count($array) || $start <= 0 || $end <= 0)
+        die("Ошибка: нет такой вершины! Подсказка: число должно быть больше 0 и меньше ". (count($array)+1) .".");
+
+    /*for($i = 0; $i < count($array); $i++){
+        if($array[$i][$i] != 0){
+            die("Ошибка: элементы диагонали должны быть равны 0!");
+        }
+    }*/
 
     for($i = 0; $i < count($array); $i++){
         for($j = 0; $j < count($array[$i]); $j++){
