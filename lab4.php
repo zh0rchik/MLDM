@@ -15,7 +15,7 @@
         <table>
             <tr>
                 <td>Ввод элементов</td>
-                <td><textarea id = "matrix" placeholder="Введите пары элементов"></textarea></td>
+                <td><textarea id = "matrix" placeholder="Введите матрицу"></textarea></td>
             </tr>
             <tr>
                 <td>Начало</td>

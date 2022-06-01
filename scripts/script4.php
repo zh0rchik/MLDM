@@ -23,6 +23,7 @@
         array_push($array, $array_row);
     }
 
+    
     // инициализация матрицы путей
     for($i = 0; $i < count($array); $i++){
         for($j = 0; $j < count($array[$i]); $j++){
