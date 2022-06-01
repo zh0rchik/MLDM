@@ -9,13 +9,16 @@
     $array_ways = []; // матрица путей
 
     for($i = 0; $i < count($row_matrix);$i++){
-        $column_row_matrix = explode(' ', $row_matrix[$i]);
+        $column_row_matrix = explode(' ', trim($row_matrix[$i]));
         $array_row = [];
 
         for($j = 0; $j < count($column_row_matrix); $j++){
+            if(count($column_row_matrix) == 1 && $column_row_matrix[$j] == '')
+                die("Ошибка: лишние переносы!");
             if($column_row_matrix[$j] === '*'){
                 array_push($array_row, INF);
             } else{
+
                 array_push($array_row, $column_row_matrix[$j]);
             }
         }
@@ -23,6 +26,13 @@
         array_push($array, $array_row);
     }
 
+    for($i = 0; $i < count($array); $i++){
+        for($j = 0; $j < count($array[$i]); $j++){
+            if(count($array) != count($array[$i])){
+                die("Ошибка: матрица должна быть квадратной!");
+            }
+        }
+    }
     
     // инициализация матрицы путей
     for($i = 0; $i < count($array); $i++){
