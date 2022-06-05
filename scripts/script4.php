@@ -30,17 +30,7 @@
 
     if($start > count($array) || $end > count($array) || $start <= 0 || $end <= 0)
         die("Ошибка: нет такой вершины! Подсказка: число должно быть больше 0 и меньше ". (count($array)+1) .".");
-
-    $flag = false;
-    for($i = 0; $i < count($array); $i++){
-        if($array[$i][$i] != 0){
-            $array[$i][$i] = 0;
-            $flag = true;
-        }
-    }
-
-    $_POST['flag'] = $flag;
-
+    
     for($i = 0; $i < count($array); $i++){
         for($j = 0; $j < count($array[$i]); $j++){
             if(count($array) != count($array[$i])){
