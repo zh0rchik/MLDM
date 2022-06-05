@@ -31,11 +31,15 @@
     if($start > count($array) || $end > count($array) || $start <= 0 || $end <= 0)
         die("Ошибка: нет такой вершины! Подсказка: число должно быть больше 0 и меньше ". (count($array)+1) .".");
 
-    /*for($i = 0; $i < count($array); $i++){
+    $flag = false;
+    for($i = 0; $i < count($array); $i++){
         if($array[$i][$i] != 0){
-            die("Ошибка: элементы диагонали должны быть равны 0!");
+            $array[$i][$i] = 0;
+            $flag = true;
         }
-    }*/
+    }
+
+    $_POST['flag'] = $flag;
 
     for($i = 0; $i < count($array); $i++){
         for($j = 0; $j < count($array[$i]); $j++){
@@ -44,11 +48,11 @@
             }
         }
     }
-    
+
     // инициализация матрицы путей
     for($i = 0; $i < count($array); $i++){
         for($j = 0; $j < count($array[$i]); $j++){
-            $array_ways[$i][$j] = $i;                      //задаёт путь до вершины напряму, если есть
+            $array_ways[$i][$j] = $i;                      //задаёт путь до вершины напрямую, если есть
         }
         $array_ways[$i][$i] = -1;
     }
@@ -70,6 +74,11 @@
     $array_node = [];
     $start--;
     $end--;
+
+    //Проверка наличия путей из вершины
+    if($array[$start][$end] == INF)
+        die("Нет такого пути! Подсказка: возможно из какой-то вершины рёбра не идут.");
+
     while($end!=-1){
         array_push($array_node, $end+1);
         $end = $array_ways[$start][$end];

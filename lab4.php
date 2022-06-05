@@ -14,8 +14,8 @@
 
         <table>
             <tr>
-                <td>Ввод элементов</td>
-                <td><textarea id = "matrix" placeholder="Введите матрицу"></textarea></td>
+                <td>Ввод матрицы весов</td>
+                <td><textarea id = "matrix" placeholder="Введите матрицу весов"></textarea></td>
             </tr>
             <tr>
                 <td>Начало</td>

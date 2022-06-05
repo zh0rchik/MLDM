@@ -25,7 +25,13 @@
         }
     }
 
-    $n = count($column_row_matrix);
+    for($i = 0; $i < count($array); $i++){
+        for($j = 0; $j < count($array[$i]); $j++){
+            if($array[$i][$j] != 0 && $array[$i][$j] != 1){
+                die("Ошибка: матрица должна состоять из 0 и 1!");
+            }
+        }
+    }
 
     for ($k = 0; $k < count($column_row_matrix); $k++)
         for ($i = 0; $i < count($column_row_matrix); $i++)
@@ -45,5 +51,4 @@
         }
         echo "<br>";
     }
-
 ?>
