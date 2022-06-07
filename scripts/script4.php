@@ -30,11 +30,19 @@
 
     if($start > count($array) || $end > count($array) || $start <= 0 || $end <= 0)
         die("Ошибка: нет такой вершины! Подсказка: число должно быть больше 0 и меньше ". (count($array)+1) .".");
-    
+
     for($i = 0; $i < count($array); $i++){
         for($j = 0; $j < count($array[$i]); $j++){
             if(count($array) != count($array[$i])){
                 die("Ошибка: матрица должна быть квадратной!");
+            }
+        }
+    }
+
+    for($i = 0; $i < count($array); $i++){
+        for($j = 0; $j < count($array[$i]); $j++){
+            if($array[$i][$j] == 0 && $i != $j){
+                die("Ошибка: все рёбра должны иметь вес!");
             }
         }
     }
@@ -65,13 +73,18 @@
     $start--;
     $end--;
 
+
+
     //Проверка наличия путей из вершины
     if($array[$start][$end] == INF)
         die("Нет такого пути! Подсказка: возможно из какой-то вершины рёбра не идут.");
 
+    $sum_way = $array_ways[$start][$end];
+
     while($end!=-1){
         array_push($array_node, $end+1);
         $end = $array_ways[$start][$end];
+        $sum_way += $array_ways[$start][$end];
     }
     $array_node = array_reverse($array_node);
 
@@ -82,4 +95,5 @@
             echo '⇾'.$array_node[$i];
         }
     }
+    echo "<br>".$sum_way;
 ?>

@@ -197,16 +197,16 @@ function analysis() {
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[i].length; j++) {
             if (matrix[i][j] == 0 && i === j) {
-                reflective = false;
+                reflective = false;             //Рефлексивность
             }
             if (matrix[i][j] != matrix[j][i]) {
-                symmetric = false;
+                symmetric = false;             //Симметричность
             }
             if (!(!((matrix[i][j] == 1) && (i != j)) || matrix[j][i] == 0)) {
-                antisymmetric = false;
+                antisymmetric = false;             //Кососимметричность
             }
             if (matrix[i][j] == 0 && multiplicationMatrix[i][j] == 1) {
-                transitive = false;
+                transitive = false;             //Кранзитивность
             }
         }
     }
